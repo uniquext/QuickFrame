@@ -8,10 +8,10 @@
     </parent>
 
     <groupId>com.uniquext.quickframe.platform</groupId>
-    <artifactId>platform-service</artifactId>
+    <artifactId>platform-controller</artifactId>
     <packaging>jar</packaging>
 
-    <name>platform-service</name>
+    <name>platform-controller</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.uniquext.quickframe.platform</groupId>
-            <artifactId>platform-api</artifactId>
+            <artifactId>platform-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

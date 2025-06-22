@@ -1,0 +1,57 @@
+# 应用基本信息
+spring:
+  application:
+    name: QuickFrame  # 应用名称，用于服务注册与发现
+
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo #?useUnicode=true&characterEncoding=utf8mb4&serverTimezone=UTC
+    username: root
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10  # 连接池最大连接数
+      connection-timeout: 30000  # 连接超时时间（毫秒）
+
+#  # Redis 配置
+#  redis:
+#    host: localhost
+#    port: 6379
+#    password:  # 无密码则留空
+#    timeout: 5000  # 连接超时时间（毫秒）
+#
+#  # Spring MVC 配置
+#  mvc:
+#    throw-exception-if-no-handler-found: true  # 找不到处理器时抛出异常
+#  resources:
+#    add-mappings: false  # 禁用默认资源映射
+
+# MyBatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  # mapper XML 文件位置
+  type-aliases-package: com.uniquext.quickframe.repository.entity  # 实体类包路径
+  configuration:
+    map-underscore-to-camel-case: true  # 开启驼峰命名转换
+
+# 服务器配置
+server:
+  port: 8080  # 应用端口
+  servlet:
+    context-path: /api  # 应用上下文路径
+    encoding:
+      charset: UTF-8  # 请求/响应编码
+      force: true
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG  # 指定包的日志级别
+  file:
+    name: logs/app.log  # 日志文件路径
+
+## 自定义配置
+#app:
+#  config:
+#    max-upload-size: 10MB  # 自定义配置项
+#    jwt-secret: your-jwt-secret-key  # JWT 密钥
